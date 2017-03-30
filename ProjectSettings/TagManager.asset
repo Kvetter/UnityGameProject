@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
+  - Oil
   layers:
   - Default
   - TransparentFX

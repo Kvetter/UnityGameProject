@@ -461,6 +461,7 @@ PlayerSettings:
   vrEditorSettings: {}
   cloudServicesEnabled:
     Collab: 1
+    UNet: 1
   cloudProjectId: 04ceb23b-e41c-4486-bd0d-d0a849060b49
   projectName: Car Prototype
   organizationId: kvetter
