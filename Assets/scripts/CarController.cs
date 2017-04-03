@@ -94,7 +94,10 @@ public class CarController : MonoBehaviour
 	void OnCollisionEnter (Collision other)
 	{
 		if (other.gameObject.tag == "Wall") {
-			rigid.AddForce (0, 0, 1000000);
+			rigid.AddForce (0, 0, 555555);
+			hitPoints -= 10;
+			healthText.text = "Health: " + hitPoints.ToString ();
+		} else if (other.gameObject.tag == "Pedestrian") {
 			hitPoints -= 10;
 			healthText.text = "Health: " + hitPoints.ToString ();
 		}
@@ -108,6 +111,29 @@ public class CarController : MonoBehaviour
 		if (other.gameObject.tag == "Finish")
 		{
 			WinText.enabled = true;
+		}
+		if (other.gameObject.tag == "Oil")
+		{
+			WheelFrictionCurve lw = LFW.sidewaysFriction;
+			lw.stiffness = 0.1f;
+			LFW.sidewaysFriction = lw;
+			RFW.sidewaysFriction = lw;
+			LRW.sidewaysFriction = lw;
+			RRW.sidewaysFriction = lw;
+
+
+		}
+	}
+
+	void OnTriggerExit( Collider other)
+	{
+		if (other.gameObject.tag == "Oil") {
+			WheelFrictionCurve lw = LFW.sidewaysFriction;
+			lw.stiffness = 1.5f;
+			LFW.sidewaysFriction = lw;
+			RFW.sidewaysFriction = lw;
+			LRW.sidewaysFriction = lw;
+			RRW.sidewaysFriction = lw;
 		}
 	}
 

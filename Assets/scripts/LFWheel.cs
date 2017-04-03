@@ -35,6 +35,6 @@ public class LFWheel : MonoBehaviour {
 	}
 
 	void onTriggerEnter(Collider other) {
-		
+		Debug.Log ("HEHEHEHE");
 	}
 }

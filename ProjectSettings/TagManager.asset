@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - Oil
+  - Pedestrian
   layers:
   - Default
   - TransparentFX
