@@ -19,7 +19,7 @@ public class AiController2 : MonoBehaviour {
 
 		float dist = agent.remainingDistance;
 
-		if (dist != Mathf.Infinity && agent.pathStatus == UnityEngine.AI.NavMeshPathStatus.PathComplete && agent.remainingDistance == 0) {
+		if (dist != Mathf.Infinity && agent.pathStatus == UnityEngine.AI.NavMeshPathStatus.PathComplete && agent.remainingDistance <= 0) {
 			if (target) {
 				agent.destination = goal1.position;
 				target = false;
